@@ -61,9 +61,9 @@ class Board():
         if piece == " ":
             return " "
         elif piece == piece.upper():
-            return 'white'
+            return 'White'
         else:
-            return 'black'
+            return 'Black'
 
 
 
