@@ -1,8 +1,6 @@
 __author__ = 'Dark-Knight'
 
 
-__author__ = 'Dark-Knight'
-
 import tkinter as tk
 class Board():
 
@@ -120,13 +118,13 @@ class Board():
         king_pos = [-1, -1]
         for row in range(8):
             for column in range(8):
-                if new_board[row][column].upper() == 'K' and piece_color(new_board[row][column]) == piece_color(piece):
+                if new_board[row][column].upper() == 'K' and self.piece_color(new_board[row][column]) == self.piece_color(piece):
                     king_pos = [row][column]
                 # can anyone take our king
                 if king_pos != [-1, -1]:
                     for row in new_board:
                         for column in row:
-                            if check_move_piece(new_board,[row, column],king_pos) and piece_color(new_board[row][column]) != piece_color(piece):
+                            if self.check_move_piece(new_board,[row, column],king_pos) and self.piece_color(new_board[row][column]) != self.piece_color(piece):
                                 return False
                 else:
                     return False
