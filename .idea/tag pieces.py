@@ -108,7 +108,7 @@ class Board():
                 else:
                     return False
 
-    def check_move_king(board, current_pos, new_pos):
+    def check_move_king(self,board, current_pos, new_pos):
     # create a new board where we moved the piece
         new_board = board
         piece = new_board[current_pos[1]][current_pos[0]]
@@ -133,7 +133,7 @@ class Board():
     def move(self, current_pos, new_pos):
         self.piece = self.chessboard[current_pos[1]][current_pos[0]]
         if self.check_move_piece( current_pos, new_pos):
-            if check_move_king(board, current_pos, new_pos):
+            if check_move_king(self.chessboard, current_pos, new_pos):
                 if self.chessboard[new_pos[1]][new_pos[0]] != " ":
                     self.taken.append(self.chessboard[new_pos[1]][new_pos[0]])
             self.chessboard[current_pos[1]][current_pos[0]] = " "
